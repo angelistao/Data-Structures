@@ -1,4 +1,4 @@
-package ObjectQueue;
+package ObjectQueue.Java;
 
 public class Student {
     public int registration;

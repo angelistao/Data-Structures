@@ -1,5 +1,4 @@
-package ObjectQueue;
-import java.io.IOException;
+package ObjectQueue.Java;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

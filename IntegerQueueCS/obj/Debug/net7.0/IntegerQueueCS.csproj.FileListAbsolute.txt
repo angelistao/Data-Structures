@@ -1,0 +1,15 @@
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.csproj.AssemblyReference.cache
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.AssemblyInfoInputs.cache
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.AssemblyInfo.cs
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.csproj.CoreCompileInputs.cache
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\bin\Debug\net7.0\IntegerQueueCS.exe
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\bin\Debug\net7.0\IntegerQueueCS.deps.json
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\bin\Debug\net7.0\IntegerQueueCS.runtimeconfig.json
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\bin\Debug\net7.0\IntegerQueueCS.dll
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\bin\Debug\net7.0\IntegerQueueCS.pdb
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.dll
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\refint\IntegerQueueCS.dll
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.pdb
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\IntegerQueueCS.genruntimeconfig.cache
+C:\Users\laboratorio\Data-Structures\IntegerQueueCS\obj\Debug\net7.0\ref\IntegerQueueCS.dll
