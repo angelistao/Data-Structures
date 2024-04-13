@@ -8,32 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\laboratorio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laboratorio\\Data-Structures\\IntegerQueueCS\\IntegerQueueCS.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Data-Structures\\IntegerQueueCS\\IntegerQueueCS.csproj",
       "projectName": "IntegerQueueCS",
-      "projectPath": "C:\\Users\\laboratorio\\Data-Structures\\IntegerQueueCS\\IntegerQueueCS.csproj",
-      "packagesPath": "C:\\Users\\laboratorio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laboratorio\\Data-Structures\\IntegerQueueCS\\obj\\",
+      "projectPath": "C:\\Users\\User\\Data-Structures\\IntegerQueueCS\\IntegerQueueCS.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Data-Structures\\IntegerQueueCS\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\laboratorio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,5 +6,10 @@ class Student:
     def __str__(self, obj):
         return "Aluno [registration=" + self.registration + ", name=" + self.name + "]"
     
-    def __eq__(self, obj):
+    # def __eq__(self, obj):
+    #     if (self.matricula != obj.matricula):
+    #         return False
+    #     if (self.nome != obj.nome):
+    #         return False
+    #     return True
         
