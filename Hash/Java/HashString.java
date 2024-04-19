@@ -1,11 +1,11 @@
 package Hash.Java;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
+import java.util.HashSet;
 
-public class Hash {
-    public static void main(String[] args){
+public class HashString {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
         ArrayList<String> listaNomes = new ArrayList<>();
@@ -14,7 +14,6 @@ public class Hash {
         
         
         String nome;
-
 
         for(int i = 0; i < 3; i++){
             nome = sc.nextLine();
@@ -27,16 +26,12 @@ public class Hash {
 
         listaNomes.addAll(hashNomes);
         
-
         StringBuilder resultado = new StringBuilder();
 
         for(String itemString : listaNomes){
             resultado.append(itemString).append(". ").append("Armazenado na posicao ").append(resultado.hashCode()).append("\n");
         }
 
-
-  
-
-        sc.close();
+        sc.close();    
     }
 }
