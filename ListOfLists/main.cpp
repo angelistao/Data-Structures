@@ -43,25 +43,44 @@ int main() {
     std::cout << std::endl;
   }
 
-  Lista** ListaAuxiliar = listaGenerica;
+  Lista* auxiliar = NULL;
   
   std::cout << "\n\nNúmeros que aparecem nas n listas: ";
   for (int i=0; i < n; i++) {
     /* Verificação dos valores */
     
-    for (Lista *p = ListaAuxiliar[i]; p != NULL; p = p->prox) {
+    for (Lista *p = listaGenerica[i]; p != NULL; p = p->prox) {
       if (contains(p->dado, listaGenerica[i]))
-        std::cout << p->dado << " ";
+        auxiliar = inserir(p->dado, auxiliar);
     }
   }
+
+  exibir(auxiliar);
+  free(auxiliar);
 
   for(int i = 0; i < n; i++){
-    std::cout << "\n\nNúmeros que aparecem somente na lista " << i + 1 << std::endl;
+    
+    Lista* listaExibicao = NULL;
+    
     for (Lista *p = listaGenerica[i]; p != NULL; p = p->prox) {
-      if (!contains(p->dado, listaGenerica[i + 1]))
-        std::cout << p->dado << " ";
+      bool flag = false; /* flag usada para controle de comparação */
+      
+      for(int j = 0; j < n; j++){
+        if(i != j && contains(p->dado, listaGenerica[j])){ /* i!=j para não considerar lista atual */
+          flag = true;
+          break;
+        }
+      }
+
+      if (!flag) listaExibicao = inserir(p->dado, listaExibicao);
+
     }
+
+    std::cout << "\n\nNúmeros que aparecem somente na lista " << i + 1 << std::endl;
+    exibir(listaExibicao);
+    
+    delete(listaExibicao); /* libera memória */
   }
 
-  free(listaGenerica);
+  delete(listaGenerica);
 }
