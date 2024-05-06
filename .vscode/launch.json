@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListaAtleta",
+            "request": "launch",
+            "mainClass": "AvaliacaoSemestral2.ListaAtleta",
+            "projectName": "Data-Structures_672c2bbe"
+        },
+        {
+            "type": "java",
+            "name": "HashAtleta",
+            "request": "launch",
+            "mainClass": "AvaliacaoSemestral2.HashAtleta",
+            "projectName": "Data-Structures_672c2bbe"
+        },
+        {
+            "type": "java",
             "name": "StudentQueue",
             "request": "launch",
             "mainClass": "ObjectQueue.StudentQueue",
