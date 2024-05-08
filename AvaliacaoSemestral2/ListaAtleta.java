@@ -68,28 +68,27 @@ public class ListaAtleta {
                     } else {
                         listaAtletas.add(new Atleta(fone, nome.toUpperCase(), apelido, dataNascimento, pontAcumulada));
                         System.out.println("Atleta cadastrado(a) com sucesso.");
+
+                                            /* Gravação no 'atletas.csv' */
+                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo))) {
+                            // Escreve o cabeçalho do CSV
+                            writer.write("Nome;Apelido;Fone;Data_de_Nascimento;Pontuacao;");
+                            writer.newLine();
+                
+                            // Escreve os dados dos atletas
+                            for (Atleta atleta : listaAtletas) {
+                                writer.write(atleta.getNome() + ";" + atleta.getApelido() + ";" + atleta.getFone() + ";" + atleta.getDataNascimento() + ";" + atleta.getPontuacaoAcumulada() + ";");
+                                writer.newLine();
+                            }
+                
+                            System.out.println("Dados escritos com sucesso no arquivo CSV.");
+                
+                        } catch (IOException e) {
+                            System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
+                        }
+                        /* -------------------------- */
                     }
         
-
-                    /* Gravação no 'atletas.csv' */
-                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo))) {
-                        // Escreve o cabeçalho do CSV
-                        writer.write("Nome;Apelido;Fone;Data_de_Nascimento;Pontuacao;");
-                        writer.newLine();
-            
-                        // Escreve os dados dos atletas
-                        for (Atleta atleta : listaAtletas) {
-                            writer.write(atleta.getNome() + ";" + atleta.getApelido() + ";" + atleta.getFone() + ";" + atleta.getDataNascimento() + ";" + atleta.getPontuacaoAcumulada() + ";");
-                            writer.newLine();
-                        }
-            
-                        System.out.println("Dados escritos com sucesso no arquivo CSV.");
-            
-                    } catch (IOException e) {
-                        System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
-                    }
-                    /* -------------------------- */
-
                     System.out.println();
                     break;
 
