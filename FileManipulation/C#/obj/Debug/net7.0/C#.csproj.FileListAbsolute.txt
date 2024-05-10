@@ -1,0 +1,28 @@
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.AssemblyInfo.cs
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C#\bin\Debug\net7.0\C#.exe
+C:\Users\User\Desktop\C#\bin\Debug\net7.0\C#.deps.json
+C:\Users\User\Desktop\C#\bin\Debug\net7.0\C#.runtimeconfig.json
+C:\Users\User\Desktop\C#\bin\Debug\net7.0\C#.dll
+C:\Users\User\Desktop\C#\bin\Debug\net7.0\C#.pdb
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.dll
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\refint\C#.dll
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.pdb
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\C#.genruntimeconfig.cache
+C:\Users\User\Desktop\C#\obj\Debug\net7.0\ref\C#.dll
+C:\Users\User\Desktop\File manipulation\C#\bin\Debug\net7.0\C#.exe
+C:\Users\User\Desktop\File manipulation\C#\bin\Debug\net7.0\C#.deps.json
+C:\Users\User\Desktop\File manipulation\C#\bin\Debug\net7.0\C#.runtimeconfig.json
+C:\Users\User\Desktop\File manipulation\C#\bin\Debug\net7.0\C#.dll
+C:\Users\User\Desktop\File manipulation\C#\bin\Debug\net7.0\C#.pdb
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.AssemblyInfo.cs
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.dll
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\refint\C#.dll
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.pdb
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\C#.genruntimeconfig.cache
+C:\Users\User\Desktop\File manipulation\C#\obj\Debug\net7.0\ref\C#.dll
