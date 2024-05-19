@@ -10,9 +10,9 @@
 int **montarDinamicamenteMatriz(int **m, int linhas, int colunas) {
 	int i;
 
-	m = malloc(linhas * sizeof(int *)); //definidas as linhas
+	m = (int**)malloc(linhas * sizeof(int)); //definidas as linhas
 	for (i = 0; i < linhas; i++)
-		m[i] = malloc(colunas * sizeof(int));
+		m[i] = (int*)malloc(colunas * sizeof(int));
 
 	return m;
 }

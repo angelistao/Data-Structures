@@ -1,63 +1,82 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ListaAtleta",
+      "request": "launch",
+      "mainClass": "AvaliacaoSemestral2.ListaAtleta",
+      "projectName": "Data-Structures_672c2bbe"
+    },
+    {
+      "type": "java",
+      "name": "HashAtleta",
+      "request": "launch",
+      "mainClass": "AvaliacaoSemestral2.HashAtleta",
+      "projectName": "Data-Structures_672c2bbe"
+    },
+    {
+      "type": "java",
+      "name": "StudentQueue",
+      "request": "launch",
+      "mainClass": "ObjectQueue.StudentQueue",
+      "projectName": "Data-Structures_daef2d21"
+    },
+    {
+      "type": "java",
+      "name": "FilaAlunos",
+      "request": "launch",
+      "mainClass": "Queue.FilaAlunos",
+      "projectName": "Data-Structures_daef2d21"
+    },
+    {
+      "type": "java",
+      "name": "FilaString",
+      "request": "launch",
+      "mainClass": "FilaString",
+      "projectName": "Data-Structures_daef2d21"
+    },
+    {
+      "type": "java",
+      "name": "Fila",
+      "request": "launch",
+      "mainClass": "Fila",
+      "projectName": "Data-Structures_daef2d21"
+    },
+    {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/ObjectsList/C#/bin/Debug/net7.0/C#.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ObjectsList/C#",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/User/Data-Structures/MatrizesEspeciais/C",
+      "program": "c:/Users/User/Data-Structures/MatrizesEspeciais/C/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
         {
-            "type": "java",
-            "name": "ListaAtleta",
-            "request": "launch",
-            "mainClass": "AvaliacaoSemestral2.ListaAtleta",
-            "projectName": "Data-Structures_672c2bbe"
-        },
-        {
-            "type": "java",
-            "name": "HashAtleta",
-            "request": "launch",
-            "mainClass": "AvaliacaoSemestral2.HashAtleta",
-            "projectName": "Data-Structures_672c2bbe"
-        },
-        {
-            "type": "java",
-            "name": "StudentQueue",
-            "request": "launch",
-            "mainClass": "ObjectQueue.StudentQueue",
-            "projectName": "Data-Structures_daef2d21"
-        },
-        {
-            "type": "java",
-            "name": "FilaAlunos",
-            "request": "launch",
-            "mainClass": "Queue.FilaAlunos",
-            "projectName": "Data-Structures_daef2d21"
-        },
-        {
-            "type": "java",
-            "name": "FilaString",
-            "request": "launch",
-            "mainClass": "FilaString",
-            "projectName": "Data-Structures_daef2d21"
-        },
-        {
-            "type": "java",
-            "name": "Fila",
-            "request": "launch",
-            "mainClass": "Fila",
-            "projectName": "Data-Structures_daef2d21"
-        },
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ObjectsList/C#/bin/Debug/net7.0/C#.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/ObjectsList/C#",
-            "console": "internalConsole",
-            "stopAtEntry": false
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ]
+    }
+  ]
 }

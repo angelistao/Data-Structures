@@ -1,7 +1,6 @@
-#include <....>
-#define TAM 100
+#define TAM 5
 
-int ehDiagonalPrincipal(int m[TAM][]) {
+int ehDiagonalPrincipal(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -14,7 +13,7 @@ int ehDiagonalPrincipal(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehDiagonalSecundaria(int m[TAM][]) {
+int ehDiagonalSecundaria(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -27,7 +26,7 @@ int ehDiagonalSecundaria(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehTriangularSuperiorPrincipal(int m[TAM][]) {
+int ehTriangularSuperiorPrincipal(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -40,7 +39,7 @@ int ehTriangularSuperiorPrincipal(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehTriangularInferiorPrincipal(int m[TAM][]) {
+int ehTriangularInferiorPrincipal(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -53,7 +52,7 @@ int ehTriangularInferiorPrincipal(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehTriangularSuperiorSecundaria(int m[TAM][]) {
+int ehTriangularSuperiorSecundaria(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -66,7 +65,7 @@ int ehTriangularSuperiorSecundaria(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehTriangularInferiorSecundaria(int m[TAM][]) {
+int ehTriangularInferiorSecundaria(int m[TAM][TAM]) {
 	int i,j;
 	for (i = 0; i < TAM; i++) {
 		for (j = 0; j < TAM; j++) {
@@ -79,7 +78,7 @@ int ehTriangularInferiorSecundaria(int m[TAM][]) {
 	return 1; //se chegou aqui, pq eh
 }
 
-int ehEsparsa(int m[TAM][]) {
+int ehEsparsa(int m[TAM][TAM]) {
 	//TESTA TODAS AS POSSIBILIDADES ANTERIORES
 	
 	int i,j;
