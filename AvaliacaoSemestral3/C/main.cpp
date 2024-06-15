@@ -6,12 +6,12 @@ using namespace std;
 
 #include "Arvore.h"
 
-
 int main()
 {
     srand(time(NULL));
     Arvore *arvore = NULL;
     int opt;
+    string apelido;
 
     do {
         cout << "1 - Cadastrar atleta" << endl;
@@ -22,11 +22,12 @@ int main()
         cout << "6 - Sair" << endl;
         cout << "> ";
         cin >> opt;
+        system("cls");
 
         switch(opt){
-            case 1:
+            case 1: /* Cadastrar atleta */
                 {
-                    cin.ignore(); // limpando input buffer
+                    cin.ignore(); // limpando buffer
                     Atleta atl;
 
                     string nome;
@@ -42,7 +43,7 @@ int main()
 
                     cout << "Altura (Cm): ";
                     cin >> altura;
-                    cin.ignore(); // Clear input buffer
+                    cin.ignore(); // Clear buffer
                     
                     cout << "Posicao: ";
                     getline(cin, posicao);
@@ -57,19 +58,26 @@ int main()
                     
                 }
                 cout << "Pressione ENTER para continuar..." << endl;
+                
                 break;
 
-            case 2:
-            cin.ignore(); // limpando input buffer
+            case 2: /* Listar atletas */
+                cin.ignore(); // limpando buffer
                 cout << "------ LISTA DE ATLETAS -------" << endl;
                 exibirEDR(arvore);
                 cout << endl;
                 cout << "Pressione ENTER para continuar..." << endl;
+                
                 break;
 
-            case 3:
+            case 3: /* Listar por altura (decresc.) */
+                cin.ignore(); // limpando buffer
+                cout << "------ LISTA DE ATLETAS POR ALTURA (DECRES.) -------" << endl;
+                exibirPorAltura(arvore);
+                cout << endl;
 
                 cout << "Pressione ENTER para continuar..." << endl;
+                
                 break;
 
             case 4: /* Remover atleta (nome) */
@@ -82,12 +90,22 @@ int main()
                 }
 
                 cout << "Pressione ENTER para continuar..." << endl;
+                
                 break;
 
-            case 5:
+            case 5: /* Pesquisar atleta por apelido */
+                {
+                cout << "Insira o apelido a ser buscado" << endl;
+                cin >> apelido;
+                cout << endl;
+                estaContidoPorApelido(apelido, arvore);
+                }
+                cin.ignore();
+                cout << "Pressione ENTER para continuar..." << endl;                
                 break;
 
-            case 6:
+            case 6: /* Sair do programa */
+                cout << "Programa encerrado!" << endl;
                 break;
 
             default:
@@ -95,7 +113,10 @@ int main()
         }
 
         cin.ignore();
+        system("cls");
     } while(opt != 6);
+
+    free(arvore);
 
     return 0;
 }

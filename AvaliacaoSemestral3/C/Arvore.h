@@ -11,7 +11,8 @@ typedef struct no {
 } Arvore;
 
 /* Inserir na árvore */
-Arvore* inserir(Atleta a, Arvore* raiz) {
+Arvore* inserir(Atleta a, Arvore* raiz)
+{
     if (raiz) { // se já existir dados
         if (a.nome == raiz->a.nome)
             return raiz; // voltando pq o dado já existe
@@ -30,9 +31,12 @@ Arvore* inserir(Atleta a, Arvore* raiz) {
         novo->esq = NULL;
         return novo;
     }
+
+
 }
 
-Arvore* remove(string nome, Arvore* raiz) {
+Arvore* remove(string nome, Arvore* raiz) 
+{
     if (raiz) {
         if (nome == raiz->a.nome) { // deleção nodo folha
 
@@ -76,7 +80,8 @@ Arvore* remove(string nome, Arvore* raiz) {
     }
 }
 
-void exibirERD(Arvore* raiz) {
+void exibirERD(Arvore* raiz)
+{
     if (raiz) {
         exibirERD(raiz->esq);
 
@@ -89,7 +94,8 @@ void exibirERD(Arvore* raiz) {
     }
 }
 
-void exibirRED(Arvore* raiz) {
+void exibirRED(Arvore* raiz) 
+{
     if (raiz) {
         cout << "Nome: " << raiz->a.nome << endl;
         cout << "Apelido: " << raiz->a.apelido << endl;
@@ -100,9 +106,10 @@ void exibirRED(Arvore* raiz) {
     }
 }
 
-void exibirEDR(Arvore* raiz) {
+void exibirEDR(Arvore* raiz) 
+{
     if (raiz) {
-        exibirEDR(raiz->esq);
+        exibirEDR(raiz->esq); 
         exibirEDR(raiz->dir);
         cout << endl;
         cout << "Nome: " << raiz->a.nome << endl;
@@ -112,7 +119,8 @@ void exibirEDR(Arvore* raiz) {
     }
 }
 
-void exibirArvore(Arvore* raiz, int nivel) {
+void exibirArvore(Arvore* raiz, int nivel) 
+{
     if (raiz) {
         // ir tudo para a direita
         exibirArvore(raiz->dir, nivel + 1);
@@ -128,7 +136,9 @@ void exibirArvore(Arvore* raiz, int nivel) {
     }
 }
 
-int contarNodos(Arvore* raiz) {
+
+int contarNodos(Arvore* raiz) 
+{
     if (raiz) {
         return 1 + contarNodos(raiz->esq) + contarNodos(raiz->dir);
     } else {
@@ -136,7 +146,77 @@ int contarNodos(Arvore* raiz) {
     }
 }
 
-bool estaContido(string nome, Arvore* raiz) {
+// copiar dados para o array
+void copiarDados(Arvore* raiz, Atleta atletas[] , int& i) 
+{
+    if (raiz) {
+        copiarDados(raiz->esq, atletas, i);
+        atletas[i++] = raiz->a;
+        copiarDados(raiz->dir, atletas,  i);
+    }
+}
+
+// Exibir por altura (ordem decrescente)
+void exibirPorAltura(Arvore* raiz) 
+{
+    Atleta atletas[contarNodos(raiz)];
+    int i = 0;
+
+    copiarDados(raiz, atletas, i);
+
+    // ordenar por altura
+    for (int i = 0; i < contarNodos(raiz); i++) {
+        for (int j = i + 1; j < contarNodos(raiz); j++) {
+            if (atletas[i].altura < atletas[j].altura) {
+                Atleta temp = atletas[i];
+                atletas[i] = atletas[j];
+                atletas[j] = temp;
+            }
+        }
+    }
+
+
+    // exibir o array
+    for (int i = 0; i < contarNodos(raiz); i++) {
+        cout << "Nome: " << atletas[i].nome << endl;
+        cout << "Apelido: " << atletas[i].apelido << endl;
+        cout << "Altura: " << atletas[i].altura << endl;
+        cout << "Posicao: " << atletas[i].posicao << endl;
+        cout << endl;
+    }
+
+    
+
+}
+
+bool estaContidoPorApelido(string apelido, Arvore* raiz){
+    if(raiz){
+        if(apelido == raiz->a.apelido){
+            cout << "Atleta encontrado!" << endl;
+            cout << "Nome: " << raiz->a.nome << endl;
+            cout << "Apelido: " << raiz->a.apelido << endl;
+            cout << "Altura: " << raiz->a.altura << endl;
+            cout << "Posicao: " << raiz->a.posicao << endl;
+            cout << endl;            
+            return true;
+        }
+
+        if(apelido < raiz->a.apelido){
+            return estaContidoPorApelido(apelido, raiz->esq);
+        } else {
+            return estaContidoPorApelido(apelido, raiz->dir);
+        }
+
+        
+
+    } else {
+        return false;
+    }
+}
+
+
+bool estaContido(string nome, Arvore* raiz) 
+{
     if (raiz) {
         if (nome == raiz->a.nome) {
             return true;
