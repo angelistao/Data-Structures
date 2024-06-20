@@ -1,4 +1,4 @@
-package ObjectsList.Java;
+package Listas.ObjectsList.Java;
 
 class Student {
     String name, course;

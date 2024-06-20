@@ -1,4 +1,4 @@
-package ObjectsList.Java;
+package Listas.ObjectsList.Java;
 
 import java.util.Scanner;
 import java.util.ArrayList;

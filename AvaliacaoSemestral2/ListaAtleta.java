@@ -4,20 +4,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* imports da gravação pro arquivo csv */
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class ListaAtleta {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        ArrayList<Atleta> listaAtletas = new ArrayList<>();
-
         int opt;
 
-        String arquivo = "atletas.csv";
+        Arquivo arquivo = new Arquivo("AvaliacaoSemestral2/atletas.csv");
 
         do {
             System.out.println("1 - Listar atletas (por pontuacao)");
@@ -37,9 +30,9 @@ public class ListaAtleta {
                 case 1: 
 
                     // ordenando por pontuação com lambda java
-                    Collections.sort(listaAtletas, (a1, a2) -> Integer.compare(a2.getPontuacaoAcumulada(), a1.getPontuacaoAcumulada()));
+                    Collections.sort(arquivo.leArquivo(), (a1, a2) -> Integer.compare(a2.getPontuacaoAcumulada(), a1.getPontuacaoAcumulada()));
 
-                    for (Atleta atleta : listaAtletas) {
+                    for (Atleta atleta : arquivo.leArquivo()) {
                         System.out.println(atleta.toString());
                     }
 
@@ -63,27 +56,15 @@ public class ListaAtleta {
                     pontAcumulada = teclado.nextInt();
                     teclado.nextLine();
 
-                    if(listaAtletas.contains(new Atleta(fone, nome.toUpperCase(), apelido, dataNascimento, pontAcumulada))){
+                    if(arquivo.leArquivo().contains(new Atleta(fone, nome.toUpperCase(), apelido, dataNascimento, pontAcumulada))){
                         System.out.println("Atleta já cadastrado(a)!");
                     } else {
-                        listaAtletas.add(new Atleta(fone, nome.toUpperCase(), apelido, dataNascimento, pontAcumulada));
-                        System.out.println("Atleta cadastrado(a) com sucesso.");
+                        try { // gravar no arquivo
 
-                                            /* Gravação no 'atletas.csv' */
-                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo))) {
-                            // Escreve o cabeçalho do CSV
-                            writer.write("Nome;Apelido;Fone;Data_de_Nascimento;Pontuacao;");
-                            writer.newLine();
-                
-                            // Escreve os dados dos atletas
-                            for (Atleta atleta : listaAtletas) {
-                                writer.write(atleta.getNome() + ";" + atleta.getApelido() + ";" + atleta.getFone() + ";" + atleta.getDataNascimento() + ";" + atleta.getPontuacaoAcumulada() + ";");
-                                writer.newLine();
-                            }
-                
-                            System.out.println("Dados escritos com sucesso no arquivo CSV.");
-                
-                        } catch (IOException e) {
+                            Atleta a = new Atleta(fone, nome, apelido, dataNascimento, pontAcumulada);
+                            arquivo.gravaAtleta(a);
+                            
+                        } catch (Exception e) {
                             System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
                         }
                         /* -------------------------- */
@@ -99,7 +80,7 @@ public class ListaAtleta {
                     String s = teclado.nextLine();
 
                     boolean flag = false;
-                    for (Atleta atleta : listaAtletas) {
+                    for (Atleta atleta : arquivo.leArquivo()) {
                         
                         if(s.equals(atleta.getNome()) || s.equals(atleta.getApelido())){
                             System.out.println("Atleta encontrado(a)!");
@@ -121,10 +102,10 @@ public class ListaAtleta {
                     System.out.print("> ");
                     String x = teclado.nextLine(); 
                     
-                    for (Atleta atleta : listaAtletas) {
+                    for (Atleta atleta : arquivo.leArquivo()) {
                         if(x.equals(atleta.getNome()) || x.equals(atleta.getApelido())){
                             System.out.println("Atleta encontrado!");
-                            listaAtletas.remove(atleta);
+                            arquivo.leArquivo().remove(atleta);
                             System.out.println("Atleta removido(a) com sucesso.");
                             break;
                         }

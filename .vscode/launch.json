@@ -6,6 +6,13 @@
       "name": "ListaAtleta",
       "request": "launch",
       "mainClass": "AvaliacaoSemestral2.ListaAtleta",
+      "projectName": "Data-Structures_cc58fb0e"
+    },
+    {
+      "type": "java",
+      "name": "ListaAtleta",
+      "request": "launch",
+      "mainClass": "AvaliacaoSemestral2.ListaAtleta",
       "projectName": "Data-Structures_672c2bbe"
     },
     {
