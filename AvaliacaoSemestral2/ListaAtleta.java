@@ -1,8 +1,9 @@
 package AvaliacaoSemestral2;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ArrayList;
+
 
 public class ListaAtleta {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class ListaAtleta {
         int opt;
 
         Arquivo arquivo = new Arquivo("AvaliacaoSemestral2/atletas.csv");
+        ArrayList<Atleta> atletas = arquivo.leArquivo(); // Carrega a lista de atletas uma vez
 
         do {
             System.out.println("1 - Listar atletas (por pontuacao)");
@@ -30,9 +32,9 @@ public class ListaAtleta {
                 case 1: 
 
                     // ordenando por pontuação com lambda java
-                    Collections.sort(arquivo.leArquivo(), (a1, a2) -> Integer.compare(a2.getPontuacaoAcumulada(), a1.getPontuacaoAcumulada()));
+                    Collections.sort(atletas, (a1, a2) -> Integer.compare(a2.getPontuacaoAcumulada(), a1.getPontuacaoAcumulada()));
 
-                    for (Atleta atleta : arquivo.leArquivo()) {
+                    for (Atleta atleta : atletas) {
                         System.out.println(atleta.toString());
                     }
 
@@ -56,18 +58,16 @@ public class ListaAtleta {
                     pontAcumulada = teclado.nextInt();
                     teclado.nextLine();
 
-                    if(arquivo.leArquivo().contains(new Atleta(fone, nome.toUpperCase(), apelido, dataNascimento, pontAcumulada))){
+                    Atleta novoAtleta = new Atleta(fone, nome, apelido, dataNascimento, pontAcumulada);
+                    if (atletas.contains(novoAtleta)) {
                         System.out.println("Atleta já cadastrado(a)!");
                     } else {
+                        atletas.add(novoAtleta);
                         try { // gravar no arquivo
-
-                            Atleta a = new Atleta(fone, nome, apelido, dataNascimento, pontAcumulada);
-                            arquivo.gravaAtleta(a);
-                            
+                            arquivo.gravaAtleta(novoAtleta);
                         } catch (Exception e) {
-                            System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
+                            System.err.println(e.getMessage());
                         }
-                        /* -------------------------- */
                     }
         
                     System.out.println();
@@ -80,12 +80,13 @@ public class ListaAtleta {
                     String s = teclado.nextLine();
 
                     boolean flag = false;
-                    for (Atleta atleta : arquivo.leArquivo()) {
+                    for (Atleta atleta : atletas) {
                         
                         if(s.equals(atleta.getNome()) || s.equals(atleta.getApelido())){
                             System.out.println("Atleta encontrado(a)!");
                             System.out.println(atleta.toString());
                             flag = true;
+                            break;
                         } 
                     } 
                     
@@ -100,17 +101,23 @@ public class ListaAtleta {
                 case 4:
 
                     System.out.print("> ");
-                    String x = teclado.nextLine(); 
-                    
-                    for (Atleta atleta : arquivo.leArquivo()) {
-                        if(x.equals(atleta.getNome()) || x.equals(atleta.getApelido())){
-                            System.out.println("Atleta encontrado!");
-                            arquivo.leArquivo().remove(atleta);
+                    String x = teclado.nextLine();
+                    boolean atletaRemovido = false;
+
+                    for (Atleta atleta : atletas) {
+                        if (x.equals(atleta.getNome()) || x.equals(atleta.getApelido())) {
+                            atletas.remove(atleta);
                             System.out.println("Atleta removido(a) com sucesso.");
+                            arquivo.gravaArquivo(atletas);
+                            atletaRemovido = true;
                             break;
                         }
-                    } 
-   
+                    }
+
+                    if (!atletaRemovido) {
+                        System.out.println("Atleta nao encontrado(a).");
+                    }
+
                     System.out.println();
                     break;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program {
 
-  public static void Main(String[] args) {
+    public static void Main(string[] args) {
 
         List<Student> StudentsList = new List<Student>();
               

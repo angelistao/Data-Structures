@@ -156,7 +156,6 @@ void copiarDados(Arvore* raiz, Atleta atletas[] , int& i)
     }
 }
 
-// Exibir por altura (ordem decrescente)
 void exibirPorAltura(Arvore* raiz) 
 {
     Atleta atletas[contarNodos(raiz)];

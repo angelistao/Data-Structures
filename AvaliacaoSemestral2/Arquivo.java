@@ -1,75 +1,54 @@
 package AvaliacaoSemestral2;
 
-import java.io.FileReader;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.FileReader;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Arquivo {
-    private FileWriter arqw;
-    private BufferedWriter escritor;
-    private FileReader arqr;
-    private BufferedReader leitor;
-    public String nomeArquivo;
-    private ArrayList<Atleta> listaAtletas;
+    private String caminho;
 
-    public Arquivo(String nomeArquivo) {
-        this.nomeArquivo = nomeArquivo;
-        listaAtletas = new ArrayList<>();
+    public Arquivo(String caminho) {
+        this.caminho = caminho;
     }
 
-    public void gravaAtleta(Atleta o) {
-        // Escrevendo os Atletas em um arquivo de texto
-        listaAtletas.clear();
-        try {
-            arqw = new FileWriter(nomeArquivo, true);
-            escritor = new BufferedWriter(arqw);
-
-            escritor.write(o.getFone() + ";" + o.getNome() + ";" + o.getApelido() + ";" + o.getDataNascimento() + ";" + o.getPontuacaoAcumulada());
-            escritor.newLine();
-
-            escritor.close();
-            arqw.close();
-
-            System.out.println("Atletas escritos no arquivo com exito.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public ArrayList<Atleta> leArquivo(){
-        // Lendo os Atletas do arquivo
-        listaAtletas.clear();
-        try {
-            arqr = new FileReader(nomeArquivo);
-            leitor = new BufferedReader(arqr);
+    public ArrayList<Atleta> leArquivo() {
+        ArrayList<Atleta> atletas = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha;
-
-            while((linha = leitor.readLine()) != null){
-                String[] campos = linha.split(";");
-
-                String fone = campos[0];
-                String nome = campos[1];
-                String apelido = campos[2];
-                String dataNascimento = campos[3];
-                int pontuacaoAcumulada = Integer.parseInt(campos[4]);
-                
-
-                Atleta o = new Atleta(fone, nome, apelido, dataNascimento, pontuacaoAcumulada);
-
-                listaAtletas.add(o);
+            while ((linha = br.readLine()) != null) {
+                String[] dados = linha.split(",");
+                if (dados.length == 5) {
+                    Atleta atleta = new Atleta(dados[0], dados[1], dados[2], dados[3], Integer.parseInt(dados[4]));
+                    atletas.add(atleta);
+                }
             }
-
-            leitor.close();
-            arqr.close();
-            
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao ler o arquivo CSV: " + e.getMessage());
         }
-
-        return listaAtletas;
+        return atletas;
     }
-    
+
+    public void gravaAtleta(Atleta atleta) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminho, true))) {
+            writer.write(atleta.toCSV());
+            writer.newLine();
+        } catch (IOException e) {
+            System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public void gravaArquivo(ArrayList<Atleta> atletas) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminho))) {
+            for (Atleta atleta : atletas) {
+                writer.write(atleta.toCSV());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Erro ao escrever no arquivo CSV: " + e.getMessage());
+        }
+    }
 }
