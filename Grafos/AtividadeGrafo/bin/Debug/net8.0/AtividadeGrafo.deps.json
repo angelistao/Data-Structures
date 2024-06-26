@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AtividadeGrafo/1.0.0": {
+        "runtime": {
+          "AtividadeGrafo.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AtividadeGrafo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

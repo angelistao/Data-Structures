@@ -1,0 +1,14 @@
+C:\Users\laboratorio\Desktop\AtividadeGrafo\bin\Debug\net8.0\AtividadeGrafo.exe
+C:\Users\laboratorio\Desktop\AtividadeGrafo\bin\Debug\net8.0\AtividadeGrafo.deps.json
+C:\Users\laboratorio\Desktop\AtividadeGrafo\bin\Debug\net8.0\AtividadeGrafo.runtimeconfig.json
+C:\Users\laboratorio\Desktop\AtividadeGrafo\bin\Debug\net8.0\AtividadeGrafo.dll
+C:\Users\laboratorio\Desktop\AtividadeGrafo\bin\Debug\net8.0\AtividadeGrafo.pdb
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.AssemblyInfoInputs.cache
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.AssemblyInfo.cs
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.csproj.CoreCompileInputs.cache
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.dll
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\refint\AtividadeGrafo.dll
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.pdb
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\AtividadeGrafo.genruntimeconfig.cache
+C:\Users\laboratorio\Desktop\AtividadeGrafo\obj\Debug\net8.0\ref\AtividadeGrafo.dll
