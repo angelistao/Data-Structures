@@ -22,39 +22,40 @@ class Grafo {
     }
 
     public static void LeArquivoMontaGrafo(string nomeArquivo, List<string> vertices, List<string> linhas){
-
         try {
-            StreamReader arqr = new(nomeArquivo);
-         
-            string linha;
-            
+            using (StreamReader arqr = new StreamReader(nomeArquivo)) {
+                string linha;
+                while((linha = arqr.ReadLine()) != null) {
+                    // Verifica se a linha tem o formato esperado
+                    string[] campos = linha.Split('@');
+                    if (campos.Length != 2) {
+                        Console.WriteLine($"Erro: Formato inválido na linha '{linha}'. Pulando esta linha.");
+                        continue; // Pula para a próxima linha
+                    }
 
-            while((linha = arqr.ReadLine()) != null) {
-                string[] campos = linha.Split("@");;
+                    string cidadeOrigem = campos[0].ToUpper();
+                    string cidadeDestino = campos[1].ToUpper();
 
-                linha = linha.ToUpper();
-                
-                linhas.Add(linha);
-                
+                    // Adiciona as cidades à lista de vértices, se ainda não estiverem presentes
+                    if (!vertices.Contains(cidadeOrigem)) {
+                        vertices.Add(cidadeOrigem);
+                    }
+                    if (!vertices.Contains(cidadeDestino)) {
+                        vertices.Add(cidadeDestino);
+                    }
 
-                if(!vertices.Contains(campos[0])){
-                    vertices.Add(campos[0].Trim());
+                    linhas.Add(linha); 
                 }
 
-                if(!vertices.Contains(campos[1])){
-                    vertices.Add(campos[1].Trim());
-                }
-                
+                vertices.Sort(); 
             }
-
-            vertices.Sort();
-
-            arqr.Close();
-            
         } catch (IOException e) {
             Console.WriteLine(e.Message);
         }
     }
+
+
+
 
     public void InserirArestaSimetrica(string origem, string destino) {        
         int indiceOrigem = this.vertices.IndexOf(origem);
@@ -69,15 +70,15 @@ class Grafo {
         }
     }
 
-    public void Show() {
-        for (int i = 0; i < this.qtdVertices; i++) {
-            Console.Write(this.vertices[i] + "\t\t\t");
-            for (int j = 0; j < this.qtdVertices; j++) {
-                if (this.MatrizAdjacencia[i, j] != 0) {
-                    Console.Write(this.vertices[j] + "\t\t\t");
+    public void MostrarGrafo(){
+        for(int i = 0; i < this.qtdVertices; i++){
+            Console.Write("(" + this.vertices[i] + ") tem conexao(oes) com" + ": \t\t");
+            for(int j = 0; j < this.qtdVertices; j++){
+                if(this.MatrizAdjacencia[i, j] != 0){
+                    Console.Write(this.vertices[j] + " \t");
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine("");
         }
     }
 
@@ -97,30 +98,37 @@ class Grafo {
     }
 
     public void MontarConexoesSimetricas(List<string> linhas){
-        string[] campos;
-        string nomeOrigem, nomeDestino;
-        int indiceOrigem, indiceDestino;
-
         foreach (string linha in linhas) {
-            campos = linha.Split('@');
-            nomeOrigem = campos[0].Trim();
-            nomeDestino = campos[1].Trim();
+            string[] campos = linha.Split('@');
+            if (campos.Length != 2) {
+                Console.WriteLine($"Erro: Formato inválido na linha '{linha}'. Pulando esta linha.");
+                continue; // Pula para a próxima linha
+            }
 
-            indiceOrigem = this.vertices.IndexOf(nomeOrigem);
-            indiceDestino = this.vertices.IndexOf(nomeDestino);
+            string nomeOrigem = campos[0].Trim().ToUpper();
+            string nomeDestino = campos[1].Trim().ToUpper();
 
-            if (indiceOrigem != -1 && indiceDestino != -1)
-            {
-                if (this.MatrizAdjacencia[indiceOrigem, indiceDestino] == 0)
-                {
+            int indiceOrigem = this.vertices.IndexOf(nomeOrigem);
+            int indiceDestino = this.vertices.IndexOf(nomeDestino);
+
+            // Verifica se encontrou os índices válidos para os vértices
+            if (indiceOrigem != -1 && indiceDestino != -1) {
+                // Adiciona conexão de indiceOrigem para indiceDestino
+                if (this.MatrizAdjacencia[indiceOrigem, indiceDestino] == 0) {
                     this.MatrizAdjacencia[indiceOrigem, indiceDestino] = 1;
-                    this.MatrizAdjacencia[indiceDestino, indiceOrigem] = 1;
-                    this.qtdArestas += 2;
+                    this.qtdArestas++;
                 }
+
+                // Adiciona conexão de indiceDestino para indiceOrigem
+                if (this.MatrizAdjacencia[indiceDestino, indiceOrigem] == 0) {
+                    this.MatrizAdjacencia[indiceDestino, indiceOrigem] = 1;
+                    this.qtdArestas++;
+                }
+            } else {
+                Console.WriteLine($"Erro: Vértices não encontrados para a linha '{linha}'. Pulando esta linha.");
             }
         }
-    
     }
 
-    
+
 }

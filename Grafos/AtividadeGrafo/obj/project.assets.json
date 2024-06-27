@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laboratorio\\Desktop\\AtividadeGrafo\\AtividadeGrafo.csproj",
+      "projectUniqueName": "C:\\Users\\laboratorio\\Desktop\\Data-Structures\\Grafos\\AtividadeGrafo\\AtividadeGrafo.csproj",
       "projectName": "AtividadeGrafo",
-      "projectPath": "C:\\Users\\laboratorio\\Desktop\\AtividadeGrafo\\AtividadeGrafo.csproj",
+      "projectPath": "C:\\Users\\laboratorio\\Desktop\\Data-Structures\\Grafos\\AtividadeGrafo\\AtividadeGrafo.csproj",
       "packagesPath": "C:\\Users\\laboratorio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laboratorio\\Desktop\\AtividadeGrafo\\obj\\",
+      "outputPath": "C:\\Users\\laboratorio\\Desktop\\Data-Structures\\Grafos\\AtividadeGrafo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laboratorio\\AppData\\Roaming\\NuGet\\NuGet.Config"

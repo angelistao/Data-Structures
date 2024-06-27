@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Principal",
+      "request": "launch",
+      "mainClass": "Java.Principal",
+      "projectName": "Data-Structures_cc58fb0e"
+    },
+    {
+      "type": "java",
       "name": "ListaAtleta",
       "request": "launch",
       "mainClass": "AvaliacaoSemestral2.ListaAtleta",

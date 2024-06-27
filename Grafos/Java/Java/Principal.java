@@ -7,7 +7,7 @@ public class Principal {
         // ler o arquivo e montar o grafo
         ArrayList<String> vertices = new ArrayList<>();
         ArrayList<String> linhasArquivo = new ArrayList<>();
-        String nomeArquivo = "C:\\Users\\laboratorio\\Desktop\\Grafos\\mapaCentral";
+        String nomeArquivo = "Grafos\\Java\\Java\\mapaCentral";
 
         Grafo.lerArquivo_montarGrafo(nomeArquivo, vertices, linhasArquivo);
 
@@ -19,7 +19,7 @@ public class Principal {
 
         
     
-        // g.mostrarGrafo();
+        g.mostrarGrafo();
         // g.mostrarMatriz();
 
         
